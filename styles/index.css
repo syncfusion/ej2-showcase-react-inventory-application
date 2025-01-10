@@ -17,7 +17,7 @@
 }
 
 .e-grid .e-headercell {
-    background-color: #c2e7ff;
+    background-color: #e0f2fe;
     /* Formal header background color */
 }
 
@@ -43,8 +43,6 @@
     /* Set button background color */
     color: black;
     /* Set button text color */
-    border: none;
-    /* Remove button border */
     border-radius: 4px;
     /* Add border radius to buttons */
     cursor: pointer;
@@ -59,17 +57,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #c2e7ff;
+    background-color: #075985;
     /* Header background color */
-    color: #000;
     /* Header text color */
     padding: 12px;
     /* Add padding for spacing */
     width: 100%;
+    min-height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 /* Font size for 150% scale and greater (1280px width and below) */
-@media screen and (max-width: 1529px) {
+@media screen and (max-width: 1540px) {
 
     .e-input-group input.e-input,
     .e-input-group.e-control-wrapper input.e-input,
@@ -86,8 +86,8 @@
     .control-pane,
     .e-control,
     .e-dialog .e-dlg-content {
-        font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-        font-size: 12px;
+        font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
+        font-size: 14px;
     }
 
     .input-container-title {
@@ -95,7 +95,6 @@
     }
 }
 
-/* Font size for 100% scale (1920px width) and 125% scale (1536px width) */
 @media screen and (min-width: 1536px) {
 
     .e-input-group input.e-input,
@@ -113,11 +112,12 @@
     .control-pane,
     .e-control,
     .e-dialog .e-dlg-content {
-        font-size: 14px;
+        font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
+        font-size: 18px;
     }
 
     .input-container-title {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .card-control-section.vertical_card_layout .col-xs-3.col-sm-3 #poscards.e-card {
@@ -131,26 +131,28 @@
 .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
-    background-color: #c2e7ff;
+    background-color: #6b7280;
 }
 
 .e-calendar .e-content td.e-today span.e-day,
 .e-calendar .e-content td.e-focused-date.e-today span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-today span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today span.e-day {
-    border: 2px solid #c2e7ff;
-    color: black
+    border: 2px solid #6b7280;
+    color: white
 }
 
 .input-container-title {
-    display: flex;
-    justify-content: center;
-    /* Horizontally center the content */
-    align-items: center;
-    /* Vertically center the content */
-    height: 15px;
-    margin: 8px 0;
-    font-weight: 500;
+    background: #075985;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+    color: #ffffff;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
 .e-btn,
@@ -161,17 +163,11 @@
 .header .input-container {
     display: flex;
     align-items: center;
-    height: 18px;
+    height: 30px;
 }
 
 .header .input-container.billno {
     width: 10%;
-}
-
-.header .input-container.custid,
-.header .input-container.custaddress,
-.header .input-container.custname {
-    width: 20%;
 }
 
 .header .input-container.phone {
@@ -182,17 +178,17 @@
     width: 22%;
 }
 
-.header .input-container:not(:last-child) {
-    padding-right: 5px;
+.header .input-container {
+    padding-right: 30px;
     /* Adjust the padding value as needed */
 }
 
 .input-container label {
     margin-right: 4px;
     margin-bottom: 0;
-    font-weight: 500;
-    font-size: 12px;
-    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
     white-space: nowrap;
     /* Prevents wrapping to a new line */
 }
@@ -222,7 +218,9 @@
 
 .primary-container {
     display: flex;
-    height: 70%;
+    height: 520px;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
 }
 
 .primary-container .e-control.e-grid {
@@ -243,7 +241,8 @@
 
 .control-pane.amount .control-section .card-layout #poscards .e-card-actions {
     padding-top: 22px;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .control-pane.amount .control-section .col-xs-6.col-sm-6.col-sm-4:nth-child(3) {
@@ -257,6 +256,11 @@
 .primary-container .card-layout .col-xs-6 {
     width: 100%;
     /* Each card should occupy full width */
+}
+
+.row .card-layout {
+    margin-right: 1px;
+    margin-left: 1px;
 }
 
 .primary-container .e-card {
@@ -313,11 +317,12 @@
 .control-pane,
 .e-control,
 .e-dialog .e-dlg-content {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
 }
 
 .control-pane .e-card-header-title {
     font-size: 12px;
+    font-weight: bold;
 }
 
 /* Button text */
@@ -374,7 +379,7 @@
 
 /* Button Text */
 .control-pane.payment .e-card .e-card-btn-txt {
-    color: #333;
+    color: white;
     /* Text color */
     font-size: 18px;
     /* Font size */
@@ -386,9 +391,10 @@
     /* Occupy the full height of the parent */
     width: 100%;
     /* Occupy the full width of the parent */
-    background-color: #ffffff;
+    background-color: #075985;
     /* Button background color */
     border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
     transition: background-color 0.3s ease-in-out;
     padding: 0;
     /* Remove default padding */
@@ -427,6 +433,7 @@
     height: 65%;
     opacity: 0.9;
     margin-right: 10px;
+    fill: var(--light-text);
 }
 
 /* Cards */
@@ -439,8 +446,8 @@
 /* Dialogs */
 .e-dialog .e-header,
 #targetElement2 .e-footer-content .e-control.e-btn {
-    background-color: #c2e7ff;
-    color: #000;
+    background-color: #075985;
+    color: white;
 }
 
 .e-dialog .e-footer {
@@ -450,7 +457,7 @@
 /* Cards inside Dialog */
 .e-card .e-card-header,
 .e-card .e-card-header-caption {
-    background-color: #c2e7ff;
+    background-color: #e0f2fe;
     /*necessary*/
     color: #333;
     line-height: 32px;
@@ -469,17 +476,16 @@
 
 /* General Styling */
 body {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 5px;
     position: absolute;
-    min-width: 1120px;
-    ;
+    min-width: 50%;
     height: auto;
 }
 
 .control-section {
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -496,7 +502,7 @@ body {
 
 #cashCalculator {
     margin-top: 20px;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: 'graphik-medium', Helvetica, Arial, sans-serif;
 }
 
 #cashCalculator table {
@@ -541,6 +547,7 @@ body {
 #cashCalculator td:first-child {
     font-weight: bold;
     color: #333333;
+    font-size: 20px;
     /* Text color for first column */
 }
 
@@ -548,17 +555,98 @@ body {
     text-align: right;
     font-weight: bold;
     color: #1b8ef2;
+    font-size: 20px;
     /* Text color for balance amount */
 }
 
-@import '../node_modules/@syncfusion/ej2-base/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-calendars/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-inputs/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-navigations/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-notifications/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-lists/styles/material3.css';
-@import "../node_modules/@syncfusion/ej2-react-grids/styles/material3.css";
+.e-card-btn-txt span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white
+}
+
+.e-grid .e-input-group .e-input.e-field.e-ralign {
+    padding-right: 10px;
+}
+
+.input-container .e-input-group.e-multi-line-input.e-auto-width {
+    width: 100%;
+}
+
+.e-dialog .e-dlg-header {
+    font-size: 23px;
+}
+
+.e-grid.e-bothlines .e-rowcell {
+    border-width: 0 0 1px 1px;
+}
+
+#content-area {
+    background-color: #e0f2fe;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .e-dialog {
+        width: 95% !important;
+        max-width: none !important;
+    }
+
+    .input-container-title {
+        font-size: 20px;
+    }
+
+    .control-pane.amount .control-section .e-card-resize-container {
+        height: 200px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .header .input-container {
+        margin-bottom: 20px;
+        margin-right: 10px;
+    }
+
+    .header .input-container.billno,
+    .header .input-container.phone,
+    .header .input-container.datepicker {
+        width: auto;
+    }
+
+    .primary-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .control-pane.amount {
+        width: 100%;
+        height: 100%;
+    }
+
+    .control-pane.amount .col-xs-6 {
+        width: 30%;
+        min-width: 20%;
+        margin-bottom: 10px;
+        margin-left: 2%;
+    }
+
+    .control-pane.payment .col-xs-3 {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+}
+
+@import '../node_modules/@syncfusion/ej2-base/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-navigations/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-notifications/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/tailwind3.css';
+@import "../node_modules/@syncfusion/ej2-react-grids/styles/tailwind3.css";
