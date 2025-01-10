@@ -750,7 +750,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
       
         const destroyProductIDFn = () => {
           if (autocompleteIns && productIDInput) {
-            autocompleteIns.destroy();
+            // textBoxIns.destroy();
             productIDInput.removeEventListener("keyup", handleKeyUp); // Remove event listener
           }
         };
@@ -809,7 +809,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
       
         const destroyProductNameFn = () => {
           if (productNameTextBoxIns && productNameInput) {
-            productNameTextBoxIns.destroy();
+            // productNameTextBoxIns.destroy();
             productNameInput.removeEventListener("keyup", handleproductNameKeyup); // Remove event listener
           }
         };
