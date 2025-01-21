@@ -17,7 +17,7 @@
 }
 
 .e-grid .e-headercell {
-    background-color: #c2e7ff;
+    background-color: #5fdace;
     /* Formal header background color */
 }
 
@@ -34,42 +34,27 @@
     }
 }
 
-/* Style for buttons */
-.input-container button {
-    padding: 6px 10px;
-    /* Add padding to buttons */
-    /* font-size: 20px; */
-    background-color: white;
-    /* Set button background color */
-    color: black;
-    /* Set button text color */
-    border: none;
-    /* Remove button border */
-    border-radius: 4px;
-    /* Add border radius to buttons */
-    cursor: pointer;
-    /* Change cursor to pointer on hover */
-}
-
 .header .input-container .e-input-group.e-control-wrapper.e-ddl {
-    width: 50% !important;
+    width: 86% !important;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #c2e7ff;
+    background: white;
     /* Header background color */
-    color: #000;
     /* Header text color */
-    padding: 12px;
+    padding: 10px;
     /* Add padding for spacing */
     width: 100%;
+    min-height: 55px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 /* Font size for 150% scale and greater (1280px width and below) */
-@media screen and (max-width: 1529px) {
+@media screen and (max-width: 1540px) {
 
     .e-input-group input.e-input,
     .e-input-group.e-control-wrapper input.e-input,
@@ -86,16 +71,15 @@
     .control-pane,
     .e-control,
     .e-dialog .e-dlg-content {
-        font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-        font-size: 12px;
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 13px;
     }
 
     .input-container-title {
-        font-size: 18px;
+        font-size: 19px;
     }
 }
 
-/* Font size for 100% scale (1920px width) and 125% scale (1536px width) */
 @media screen and (min-width: 1536px) {
 
     .e-input-group input.e-input,
@@ -113,11 +97,12 @@
     .control-pane,
     .e-control,
     .e-dialog .e-dlg-content {
-        font-size: 14px;
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 15px;
     }
 
     .input-container-title {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     .card-control-section.vertical_card_layout .col-xs-3.col-sm-3 #poscards.e-card {
@@ -131,26 +116,28 @@
 .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day {
-    background-color: #c2e7ff;
+    background-color: #6b7280;
 }
 
 .e-calendar .e-content td.e-today span.e-day,
 .e-calendar .e-content td.e-focused-date.e-today span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-today span.e-day,
 .e-bigger.e-small .e-calendar .e-content td.e-focused-date.e-today span.e-day {
-    border: 2px solid #c2e7ff;
-    color: black
+    border: 2px solid #6b7280;
+    color: white
 }
 
 .input-container-title {
-    display: flex;
-    justify-content: center;
-    /* Horizontally center the content */
-    align-items: center;
-    /* Vertically center the content */
-    height: 15px;
-    margin: 8px 0;
-    font-weight: 500;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+    background: linear-gradient(to right, #fb923c , #facc15  50%, #f97316 );
+    color: black;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: bold;
 }
 
 .e-btn,
@@ -159,30 +146,23 @@
 }
 
 .header .input-container {
-    display: flex;
     align-items: center;
-    height: 18px;
+    height: 30px;
 }
 
-.header .input-container.billno {
-    width: 10%;
-}
-
-.header .input-container.custid,
-.header .input-container.custaddress,
-.header .input-container.custname {
-    width: 20%;
+.header .input-container.custaddress {
+    width: 22%;
 }
 
 .header .input-container.phone {
-    width: 15%;
+    width: 24%;
 }
 
 .header .input-container.datepicker {
     width: 22%;
 }
 
-.header .input-container:not(:last-child) {
+.header .input-container {
     padding-right: 5px;
     /* Adjust the padding value as needed */
 }
@@ -190,11 +170,18 @@
 .input-container label {
     margin-right: 4px;
     margin-bottom: 0;
-    font-weight: 500;
-    font-size: 12px;
-    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    color: black;
     white-space: nowrap;
     /* Prevents wrapping to a new line */
+}
+
+.e-dialog .input-container label {
+    color: black;
+    margin-bottom: "10px";
+    font-weight: "bold";
+    font-size: 14px;
 }
 
 .header input,
@@ -222,7 +209,8 @@
 
 .primary-container {
     display: flex;
-    height: 70%;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
 }
 
 .primary-container .e-control.e-grid {
@@ -238,25 +226,24 @@
 }
 
 .control-pane.amount .control-section .card-layout #poscards {
-    height: 114px;
+    height: 90px;
+    background-color: #e2e0f2;
 }
 
 .control-pane.amount .control-section .card-layout #poscards .e-card-actions {
-    padding-top: 22px;
-    font-size: 20px;
-}
-
-.control-pane.amount .control-section .col-xs-6.col-sm-6.col-sm-4:nth-child(3) {
-    margin-bottom: -18px;
-}
-
-.control-pane.amount .control-section .e-card-resize-container {
-    margin-top: 40px;
+    padding-top: 9px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .primary-container .card-layout .col-xs-6 {
     width: 100%;
     /* Each card should occupy full width */
+}
+
+.row .card-layout {
+    margin-right: 1px;
+    margin-left: 1px;
 }
 
 .primary-container .e-card {
@@ -288,13 +275,13 @@
 .card-control-section.vertical_card_layout #poscards_profile.e-card {
     text-align: center;
     background-size: cover;
-    height: 70px;
+    height: 55px;
 }
 
 .card-control-section.vertical_card_layout #poscards.e-card .e-card-header-caption .e-card-header-title,
 .card-control-section.vertical_card_layout #poscards.e-card .e-card-header-caption .e-card-sub-title,
 .card-control-section.vertical_card_layout #poscards.e-card .e-card-actions button {
-    color: #000;
+    color: white;
 }
 
 .card-control-section.vertical_card_layout #poscards.e-card .e-card-actions,
@@ -313,11 +300,12 @@
 .control-pane,
 .e-control,
 .e-dialog .e-dlg-content {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .control-pane .e-card-header-title {
     font-size: 12px;
+    font-weight: bold;
 }
 
 /* Button text */
@@ -364,17 +352,12 @@
 }
 
 .control-pane.payment .e-card:hover {
-    transform: translateY(-5px);
-}
-
-.control-pane.payment .e-card .e-card-actions {
-    padding: 5px;
-    background-color: #f4f4f4;
+    transform: scale(1.05) ;
 }
 
 /* Button Text */
 .control-pane.payment .e-card .e-card-btn-txt {
-    color: #333;
+    color: white;
     /* Text color */
     font-size: 18px;
     /* Font size */
@@ -386,9 +369,10 @@
     /* Occupy the full height of the parent */
     width: 100%;
     /* Occupy the full width of the parent */
-    background-color: #ffffff;
+    background-color: #fb923c;
     /* Button background color */
     border-radius: 5px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
     transition: background-color 0.3s ease-in-out;
     padding: 0;
     /* Remove default padding */
@@ -427,11 +411,12 @@
     height: 65%;
     opacity: 0.9;
     margin-right: 10px;
+    fill: var(--light-text);
 }
 
 /* Cards */
 .e-card {
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -439,8 +424,9 @@
 /* Dialogs */
 .e-dialog .e-header,
 #targetElement2 .e-footer-content .e-control.e-btn {
-    background-color: #c2e7ff;
-    color: #000;
+    background-color: #fb923c;
+    color: white;
+    font-weight: bold;
 }
 
 .e-dialog .e-footer {
@@ -450,7 +436,7 @@
 /* Cards inside Dialog */
 .e-card .e-card-header,
 .e-card .e-card-header-caption {
-    background-color: #c2e7ff;
+    background-color: #543cfb;
     /*necessary*/
     color: #333;
     line-height: 32px;
@@ -458,7 +444,7 @@
 
 /* Card Buttons */
 .e-card .e-card-actions .e-card-btn-txt {
-    color: #007bff;
+    color: black;
     cursor: pointer;
 }
 
@@ -469,17 +455,16 @@
 
 /* General Styling */
 body {
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     background-color: #f4f4f4;
     margin: 5px;
     position: absolute;
-    min-width: 1120px;
-    ;
+    min-width: 50%;
     height: auto;
 }
 
 .control-section {
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -496,7 +481,7 @@ body {
 
 #cashCalculator {
     margin-top: 20px;
-    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 #cashCalculator table {
@@ -541,6 +526,7 @@ body {
 #cashCalculator td:first-child {
     font-weight: bold;
     color: #333333;
+    font-size: 17px;
     /* Text color for first column */
 }
 
@@ -548,17 +534,88 @@ body {
     text-align: right;
     font-weight: bold;
     color: #1b8ef2;
+    font-size: 17px;
     /* Text color for balance amount */
 }
 
-@import '../node_modules/@syncfusion/ej2-base/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-calendars/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-inputs/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-navigations/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-notifications/styles/material3.css';
-@import '../node_modules/@syncfusion/ej2-lists/styles/material3.css';
-@import "../node_modules/@syncfusion/ej2-react-grids/styles/material3.css";
+.e-card-btn-txt span {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.e-grid .e-input-group .e-input.e-field.e-ralign {
+    padding-right: 10px;
+}
+
+.input-container .e-input-group.e-multi-line-input.e-auto-width {
+    width: 100%;
+    height: 35px;
+}
+
+.e-dialog .e-dlg-header {
+    font-size: 20px;
+}
+
+.e-grid.e-bothlines .e-rowcell {
+    border-width: 0 0 1px 1px;
+}
+
+.header .header-table {
+    width: 35%;
+    margin-right:5%;
+}
+
+.e-grid .e-row.e-altrow {
+    background-color: #e8ebea;
+}
+td {
+    padding: 3px;
+}
+
+.input-container.custid button,
+.input-container.custid button:hover {
+    background-color: rgb(234 88 12);
+    color: white;
+    width: 28px;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .input-container-title {
+        font-size: 19px;
+    }
+
+    .control-pane.amount .col-xs-6 {
+        min-width: 20%;
+        margin-bottom: 10px;
+        margin-left: 2%;
+    }
+
+    .control-pane.payment .col-xs-3 {
+        width: 25%;
+    }
+
+    .header .header-table {
+        width: 28%;
+        margin-right:50px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .header .input-container .e-input-group.e-control-wrapper.e-ddl {
+        width: 83% !important;
+    }
+}
+
+@import '../node_modules/@syncfusion/ej2-base/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-dropdowns/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-navigations/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-notifications/styles/tailwind3.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/tailwind3.css';
+@import "../node_modules/@syncfusion/ej2-react-grids/styles/tailwind3.css";
