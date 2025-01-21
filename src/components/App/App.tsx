@@ -26,7 +26,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { productData } from "./datasource";
 import { AutoComplete, AutoCompleteComponent, ChangeEventArgs } from "@syncfusion/ej2-react-dropdowns";
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-  
+
   let customerDatabase: object[] = [
     {
       id: 2401,
@@ -750,7 +750,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
       
         const destroyProductIDFn = () => {
           if (autocompleteIns && productIDInput) {
-            // textBoxIns.destroy();
+            autocompleteIns.destroy();
             productIDInput.removeEventListener("keyup", handleKeyUp); // Remove event listener
           }
         };
@@ -1020,8 +1020,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
           ref={gridInstance}
           emptyRecordTemplate={(): any => null}
           gridLines="Both"
-          height="435px"
+          height="250px"
           width='100%'
+          rowHeight={15}
           textWrapSettings={wrapSettings}
           dataSource={[]}
           actionComplete={actionComplete}
@@ -1139,27 +1140,24 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
     return (
       <div>
-        <div className="input-container-title">
-          ABC Supermarket Point of Sale (POS)
-        </div>
-
+      <div className="input-container-title">ABC SUPERMARKET POINT OF SALE (POS)</div>
         {/* Customer details Header element */}
-        <div className="header" style={{marginTop: "30px"}}>
-          <div className="input-container billno">
-            <label>Bill No:</label>
+        <div className="header" style={{marginTop: "15px", height: '20%'}}>
+          <table className="header-table" style={{marginLeft: '40px'}}>
+          <tr className="input-container billno"><td>
+            <label>Bill Number:</label></td><td>
             <TextBoxComponent
               id="billNoInput"
               type="text"
               readOnly
             />
-          </div>
-          <div className="input-container custid">
-            <label>Customer ID:</label>
+          </td></tr>
+          <tr className="input-container custid"><td>
+            <label>Customer ID:</label></td><td>
             <AutoCompleteComponent
                 id="customerID"
-                placeholder="Enter id"
+                placeholder="Enter customer id"
                 dataSource={customerDatabase.map(customer => (customer as any).id)}
-                width={150}
                 ref={customerIDRef}
             />
             <ButtonComponent
@@ -1170,19 +1168,20 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
             >
               +
             </ButtonComponent>
-          </div>
-          <div className="input-container custname">
-            <label>Customer Name:</label>
+          </td></tr></table>
+          <table className="header-table">
+          <tr className="input-container custname"><td>
+            <label>Customer Name:</label></td><td>
             <TextBoxComponent
               type="text"
               id="customerName"
               ref={customerNameRef}
-              placeholder="Customer name"
+              placeholder="Customer Name"
               readOnly
             />
-          </div>
-          <div className="input-container phone">
-            <label>Phone No:</label>
+          </td></tr>
+          <tr className="input-container phone"><td>
+            <label>Phone Number:</label></td><td>
             <MaskedTextBoxComponent
               id="phone-input"
               ref={customerPhoneRef}
@@ -1190,31 +1189,31 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
               placeholder="(999) 999-9999"
               readOnly
             />
-          </div>
-          <div className="input-container custaddress">
-            <label>Address:</label>
+          </td></tr></table>
+          <table className="header-table">
+          <tr className="input-container custaddress"><td>
+            <label>Customer Address:</label></td><td>
             <TextAreaComponent
               id="customerAddress"
               value={""}
               ref={customerAddressRef}
-              placeholder="Customer address"
+              placeholder="Customer Address"
               readOnly
             />
-          </div>
-          <div className="input-container datepicker">
-            <label>Date:</label>
+          </td></tr>
+          <tr className="input-container datepicker"><td>
+            <label>Date:</label></td><td>
             <DateTimePickerComponent
               id="date-picker"
               ref={datePicker}
               value={currentDateTime}
-              width={300}
               format="MM/dd/yyyy hh:mm:ss a"
               readOnly
             />
-          </div>
+          </td></tr></table>
         </div>
         {/* Main Content of the Body - Primary Grid and Vertical Amount details Card components */}
-        <div className="primary-container" style={{marginTop: "30px"}}>
+        <div className="primary-container" style={{marginTop: "15px", height: '50%'}}>
           {MemorizedGridComponent}
 
           {/* Product search by its name - Dialog popup */}
@@ -1269,7 +1268,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
             <div className="control-section card-control-section vertical_card_layout">
               <div className="e-card-resize-container">
                 <div className="row">
-                  <div className="row card-layout" style={{height: '485px'}}>
+                  <div className="row card-layout" style={{height: '330px'}}>
                     <div className="col-xs-6 col-sm-6 col-sm-4 ">
                       <div className="e-card" id="poscards">
                         <div className="e-card-header">
@@ -1324,7 +1323,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
         </div>
 
         {/* Horizontal Card components - Delivery type, Payment type Buttons*/}
-        <div className="control-pane payment" style={{marginTop: "37px"}}>
+        <div className="control-pane payment" style={{marginTop: "15px", height: '20%'}}>
           <div className="control-section card-control-section vertical_card_layout">
             <div className="e-card-resize-container">
               <div className="row">
@@ -1333,15 +1332,15 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                   <div className="col-xs-3 col-sm-3 ">
                     <div className="e-card" id="poscards">
                       <div className="e-card-actions">
-                        <div className="e-card-btn-txt" id="deliverOptionDiv">
+                        <div className="e-card-btn-txt" id="deliverOptionDiv" style={{ background: 'linear-gradient(to right, rgb(251, 146, 60), rgb(224 212 55) 50%, rgb(251, 146, 60))'}}>
                           <ButtonComponent
                             ref={buttonRef}
                             onClick={onClickToggle}
                             isToggle={true}
                             title="Toggle Delivery type"
                           >
-                            <span>Delivery type:</span> &nbsp;
-                            <span ref={deliverytypeRef} style={{ color: deliveryType === "Take Away" ? "rgb(50,234, 50)" : "red" }}>
+                            <span>Delivery Type:</span> &nbsp;
+                            <span ref={deliverytypeRef} style={{ color: deliveryType === "Take Away" ? "rgb(8 168 67)" : "red" }}>
                             {deliveryType}
                             </span>
                           </ButtonComponent>
@@ -1353,7 +1352,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                   <div className="col-xs-3 col-sm-3 ">
                     <div className="e-card" id="poscards">
                       <div className="e-card-actions">
-                        <div className="e-card-btn-txt" id="cardPayButtonDiv">
+                        <div className="e-card-btn-txt" id="cardPayButtonDiv" style={{ background: 'linear-gradient(to right, rgb(16, 18, 240), rgb(141 149 232) 50%, rgb(16, 18, 240))'}}>
                           <ButtonComponent
                             id="cardPayButton"
                             title="Click to enter card payment"
@@ -1374,7 +1373,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                   <div className="col-xs-3 col-sm-3 ">
                     <div className="e-card" id="poscards">
                       <div className="e-card-actions">
-                        <div className="e-card-btn-txt" id="UPIPayButtondiv">
+                        <div className="e-card-btn-txt" id="UPIPayButtondiv" style={{ background: 'linear-gradient(to right, #15803d, #55e189 50%, #15803d)'}}>
                           <ButtonComponent
                             id="UPIPayButton"
                             title="Click to enter UPI payment"
@@ -1395,7 +1394,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                   <div className="col-xs-3 col-sm-3 ">
                     <div className="e-card" id="poscards">
                       <div className="e-card-actions">
-                        <div className="e-card-btn-txt" id="totalNetAmount">
+                        <div className="e-card-btn-txt" id="totalNetAmount" style={{ background: 'linear-gradient(to right, rgb(251 60 60), rgb(239 179 87) 50%, rgb(251 60 60))'}}>
                           <ButtonComponent
                             id="cashPayButton"
                             title="Click to enter cash payment"
@@ -1441,7 +1440,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
             >
               <form>
                     <div className="input-container" style={{ marginBottom: "5px" }}>
-                    <label htmlFor="customerName" style={{ marginBottom: "10px", fontWeight: "bold" }}>Customer Name:</label>
+                    <label htmlFor="customerName">Customer Name</label>
                     <TextBoxComponent
                         id="customerName"
                         ref={newCustomerNameRef}
@@ -1449,7 +1448,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                     />
                     </div>
                     <div className="input-container" style={{ marginBottom: "5px" }}>
-                    <label htmlFor="phone-input" style={{ marginBottom: "10px", fontWeight: "bold" }}>Phone No:</label>
+                    <label htmlFor="phone-input">Phone No</label>
                     <MaskedTextBoxComponent
                         id="phone-input"
                         ref={newCustomerPhoneRef}
@@ -1458,7 +1457,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
                     />
                     </div>
                     <div className="input-container" style={{ marginBottom: "5px" }}>
-                    <label htmlFor="customerAddress" style={{ marginBottom: "10px", fontWeight: "bold" }}>Address:</label>
+                    <label htmlFor="customerAddress">Address</label>
                     <TextAreaComponent
                         id="customerAddress"
                         width='100%'
@@ -1509,3 +1508,4 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     );
   }
   export default App;
+  
