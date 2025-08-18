@@ -7,7 +7,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    index: glob.sync("./src/**/**/*.tsx")
+    index: "./src/common/index.tsx"
   },
   target: "web",
   module: {
@@ -46,6 +46,16 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 8080,
+    open: true,
+    hot: true,
+    historyApiFallback: true,
   },
   optimization: {
     minimize: true,

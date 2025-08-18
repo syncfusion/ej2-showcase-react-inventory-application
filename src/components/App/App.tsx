@@ -1144,6 +1144,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
         {/* Customer details Header element */}
         <div className="header" style={{marginTop: "15px", height: '120px'}}>
           <table className="header-table" style={{marginLeft: '40px'}}>
+          <tbody>
           <tr className="input-container billno"><td>
             <label>Bill Number:</label></td><td>
             <TextBoxComponent
@@ -1167,8 +1168,11 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
             >
               +
             </ButtonComponent>
-          </td></tr></table>
+          </td></tr>
+          </tbody>
+          </table>
           <table className="header-table">
+          <tbody>
           <tr className="input-container custname"><td>
             <label>Customer Name:</label></td><td>
             <TextBoxComponent
@@ -1188,8 +1192,11 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
               placeholder="(999) 999-9999"
               readOnly
             />
-          </td></tr></table>
+          </td></tr>
+          </tbody>
+          </table>
           <table className="header-table">
+          <tbody>
           <tr className="input-container custaddress"><td>
             <label>Customer Address:</label></td><td>
             <TextAreaComponent
@@ -1209,7 +1216,9 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
               format="MM/dd/yyyy hh:mm:ss a"
               readOnly
             />
-          </td></tr></table>
+          </td></tr>
+          </tbody>
+          </table>
         </div>
         {/* Main Content of the Body - Primary Grid and Vertical Amount details Card components */}
         <div className="primary-container" style={{marginTop: "15px", height: 'calc(100vh - 325px)'}}>
